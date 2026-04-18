@@ -35,6 +35,8 @@ boxs.forEach((box)=>{
         }
         box.disabled=true;
         wincheck();
+        checkDraw();
+        
         // drowchack();
     });
 });
@@ -56,26 +58,24 @@ const winer=(win)=>{
     mge_continer.classList.remove("hide");
 };
 
-//  const drowchack =()=>{
-     
-//     for(let pattern of winPatterns)
-//     {
+const draw=()=>{
+    win_mge.innerText=`Match is Draw`;
+    disableBoxes();
+    mge_continer.classList.remove("hide");
+};
+const checkDraw = () => {
+    let isDraw = true;
 
-//         let pos1val =boxs[pattern[0]].innerText;
-//         let pos2val =boxs[pattern[1]].innerText;
-//         let pos3val =boxs[pattern[2]].innerText;
+    boxs.forEach((box) => {
+        if (box.innerText === "") {
+            isDraw = false;
+        }
+    });
 
-//         // if(pos1val ===""&& pos2val ===""&&pos3val ===""){
-//         //     if(pos1val===pos2val&&pos2val===pos3val){    
-//         //         console.log("drow");
-                 
-//         //     }
-            
-//         // } 
-//     }
-    
-// };
-
+    if (isDraw) {
+         draw();
+    }
+};
 
 const wincheck =()=>{
      
@@ -99,3 +99,9 @@ const wincheck =()=>{
 
 newbut.addEventListener("click",resetGame);
 rebut.addEventListener("click",resetGame);
+
+// boxs.forEach((box) => {
+//     box.addEventListener("click", () => {
+//         box.style.transform = "translateZ(100px)";
+//     });
+// });

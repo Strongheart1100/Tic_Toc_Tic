@@ -28,18 +28,27 @@ body{
     justify-content: center;
     align-items: center;
     gap: 1.5vmin;
+    /* perspective: 1000px; */
 }
 .box{
     height: 18vmin;
     width: 18vmin;
     border-radius: 1rem;
     border: none;
-    box-shadow: 1px 1px 16px #0a0b0bed;
+    box-shadow: 1px 1px 16px #000000;
     background-color: #c6e0ff;
     color: #2978a0;
     font-size: 8vmin;
     cursor: pointer;
+    /* transition: transform 0.3s; */
 }
+.box:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+/* .box:active {
+    transform: translateZ(100px) scale(1.1);
+} */
 .but{
     background-color: #31565996;
     color: #c6e0ff;
@@ -58,15 +67,16 @@ body{
     font-size: 4vmin;
 }
 .mag-continer{
-    height: 80vmin;
+    height: 100vmin;
     /* background-color: antiquewhite; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 40vmin;
+    margin-bottom: 50vmin;
     gap: 4vmin;
 }
 .hide{
     display:none ;
 }
+ 
