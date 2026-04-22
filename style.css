@@ -8,19 +8,31 @@ body{
     color: white;
     text-align: center;
 }
-#main h1{
+/* .main{
+    display:block;
+    justify-content: center;
+    
+} */
+.main h1{
     margin-top: 20px;
+    
 }
 #continer{
-    height: 70vh;
-    
-     display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    height: 80vmin;
+    display: grid;
+    place-items: center;
+    height: auto;
     /* background-color: antiquewhite; */
+    margin: 8vh 0px;
+    
+
 }
+ .gameHide{
+    display: block;
+}
+
 #game{
-    /* background-color: aqua; */
     height: 60vmin;
     width: 60vmin;
     display: flex;
@@ -28,7 +40,6 @@ body{
     justify-content: center;
     align-items: center;
     gap: 1.5vmin;
-    /* perspective: 1000px; */
 }
 .box{
     height: 18vmin;
@@ -40,15 +51,13 @@ body{
     color: #2978a0;
     font-size: 8vmin;
     cursor: pointer;
+    font-weight: 600;
     /* transition: transform 0.3s; */
 }
 .box:hover{
-    transform: scale(1.1);
+    transform: scale(1);
     transition: 0.5s;
 }
-/* .box:active {
-    transform: translateZ(100px) scale(1.1);
-} */
 .but{
     background-color: #31565996;
     color: #c6e0ff;
@@ -58,25 +67,60 @@ body{
     border-radius: 1rem;
     cursor: pointer;
     box-shadow: 1px 1px 20px #464234;
+    
+}
+#ReButt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #mag-winer{
     font-size: 10vmin;
-
 }
 #newgame{
     font-size: 4vmin;
+    /* width: 100%; */
 }
 .mag-continer{
-    height: 100vmin;
+    margin-top: 20%;
+    /* height: 100vmin; */
+    /* background-color: antiquewhite; */
     /* background-color: antiquewhite; */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-bottom: 50vmin;
+    /* margin-bottom: 50vmin; */
+
     gap: 4vmin;
 }
-.hide{
+.hide {
     display:none ;
 }
  
+#play{
+    position: absolute;
+    
+    background-color: #2978a0;
+    padding: 2vmin 2.4vmin;
+    border-radius: 50%;
+    font-size: 4vmin;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: 0.1s linear;
+     transform: scale(1.3);
+     transition: 0.5s;
+    transform: translate(-50%, -50%); 
+}
+
+/* #playGame{
+
+    display: grid;
+    place-items: center;
+    height: auto;
+
+}
+.playHide{
+    display: block;
+
+} */

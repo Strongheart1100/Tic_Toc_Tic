@@ -1,11 +1,17 @@
 let boxs=document.querySelectorAll(".box");
+
 let rebut=document.querySelector("#restart");
 let newbut=document.querySelector("#newgame");
 let win_mge=document.querySelector("#mag-winer");
 let mge_continer=document.querySelector(".mag-continer");
+let main=document.querySelector(".main");
+let player=document.querySelector("#play");
+let continer=document.querySelector("#continer");
+let continerhide=document.querySelector(".hide");
+
+let hidegame=document.querySelectorAll(".gameHide");
 
 let turn0=true;//playerX,PlayerO
-
 const winPatterns=[
     [0,1,2],
     [0,3,6],
@@ -16,28 +22,45 @@ const winPatterns=[
     [6,7,8]
 ]
 
+
+const GameHide=()=>{
+    hidegame.forEach((el) => {
+    el.style.display = "none";
+});
+};
+const GameUnHide=()=>{
+    hidegame.forEach((el) => {
+    el.style.display = "block";
+});
+};
 const resetGame=()=>{
     turn0=true;
     enableBoxes();
-    mge_continer.classList.add("hide");
+    // mge_continer.classList.add("hide");
+    continerhide.style.display="none"
+    player.innerText="O";
+    GameUnHide();
+    
 }
+ 
  
 boxs.forEach((box)=>{
     box.addEventListener("click",()=>{
         // console.log("box was clicked");
         if(turn0){
             box.innerText="O";
+            player.innerText="X";
             turn0=false;
+            
         }
         else{
             box.innerText="X";
+            player.innerText="O";
             turn0=true;
         }
         box.disabled=true;
         wincheck();
         checkDraw();
-        
-        // drowchack();
     });
 });
 
@@ -55,17 +78,19 @@ const enableBoxes=()=>{
 const winer=(win)=>{
     win_mge.innerText=`You are Winer ${win}`;
     disableBoxes();
-    mge_continer.classList.remove("hide");
+    continerhide.style.display="block"
+    GameHide();
+    
 };
 
 const draw=()=>{
     win_mge.innerText=`Match is Draw`;
     disableBoxes();
-    mge_continer.classList.remove("hide");
+     continerhide.style.display="block"
+    GameHide();
 };
 const checkDraw = () => {
     let isDraw = true;
-
     boxs.forEach((box) => {
         if (box.innerText === "") {
             isDraw = false;
@@ -95,13 +120,28 @@ const wincheck =()=>{
         } 
     }
     
+    
 };
 
 newbut.addEventListener("click",resetGame);
 rebut.addEventListener("click",resetGame);
 
-// boxs.forEach((box) => {
-//     box.addEventListener("click", () => {
-//         box.style.transform = "translateZ(100px)";
-//     });
-// });
+ //play button
+ 
+ continer.addEventListener("mousemove", (e)=>{
+  let rect = continer.getBoundingClientRect();
+
+  let x = e.clientX - rect.left;
+  let y = e.clientY - rect.top;
+
+  player.style.left = (x - 30) + "px";
+  player.style.top = (y - 30) + "px";
+});
+continer.addEventListener("mouseenter", () => {
+  player.style.opacity = "1";
+   
+});
+
+continer.addEventListener("mouseleave", () => {
+  player.style.opacity = "0";
+});

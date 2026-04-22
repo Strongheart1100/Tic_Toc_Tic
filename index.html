@@ -1,34 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tic-Toc-Ticgame</title>
-    <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-    <div class="mag-continer hide">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Tic-Toc-Tic</h1>
+      <!-- <div id="playGame">
+        <button class="playHide" id="playGame">Play Game</button>
+      </div> -->
+      <div class="mag-continer hide">
         <p id="mag-winer">winer</p>
         <button class="but" id="newgame">NewGame</button>
-    </div>
-    <div id="main">
-        <h1>Tic-Toc-Tic</h1>
-        <div id="continer">
-            <div id="game">
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-                <button class="box"></button>
-            </div>
+      </div>
+      <div id="continer" class="gameHide">
+        <div id="play" class="gameHide">O</div>
+        <div id="game">
+          <button class="box gameHide"></button>
+          <button class="box gameHide"></button>
+          <button class="box gameHide"></button>
+          <button class="box gameHide"></button>
+          <button class="box gameHide"></button>
+          <button class="box gameHide"></button>
+          <button class="box gameHide"></button>
+          <button class="box gameHide"></button>
+          <button class="box gameHide"></button>
         </div>
-        <button class="but" id="restart">Restart</button>
+      </div>
+      <div id="ReButt">
+        <button class="but gameHide" id="restart">Restart</button>
+      </div>
     </div>
 
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
